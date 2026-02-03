@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig({
-  base: '/awa/',
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/' : '/awa/',
   server: {
     port: 3000,
     host: '0.0.0.0',
@@ -12,4 +12,4 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
   }
-});
+}));
